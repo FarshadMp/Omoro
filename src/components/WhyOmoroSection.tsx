@@ -37,7 +37,7 @@ const features = [
 
 export default function WhyOmoroSection() {
   return (
-    <section className="bg-gray-50 py-20 lg:py-28">
+    <section className="bg-gray-50 py-20 lg:py-22">
       <div className="px-6 md:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2

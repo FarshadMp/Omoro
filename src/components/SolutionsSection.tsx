@@ -44,7 +44,7 @@ export default function SolutionsSection() {
   };
 
   return (
-    <section className="bg-white pb-20 lg:pb-28 overflow-hidden">
+    <section className="bg-white pb-20 lg:pb-22 overflow-hidden">
       <div className="px-6 md:px-12 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
           {/* Left Column: Content */}

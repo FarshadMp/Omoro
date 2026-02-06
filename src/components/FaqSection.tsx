@@ -45,7 +45,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-22">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-24">
           {/* Header Column */}

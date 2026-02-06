@@ -35,7 +35,7 @@ export default function AllProductsPage() {
     <main className="min-h-screen bg-white">
       <Header forceDark={true} />
 
-      <div className="pt-32 pb-20 lg:pb-28 px-6 md:px-12 lg:px-16">
+      <div className="pt-32 pb-20 lg:pb-22 px-6 md:px-12 lg:px-16">
         <div className="mb-2 md:mb-8 flex items-center justify-center md:justify-start gap-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-black">
             Home
@@ -64,7 +64,7 @@ export default function AllProductsPage() {
                   href={`/products/${product.slug}`}
                   className="group block"
                 >
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-2 bg-gray-100 border border-gray-100">
+                  <div className="relative aspect-square rounded-none overflow-hidden mb-2 bg-gray-100 border border-gray-100">
                     <Image
                       src={product.image}
                       alt={product.title}

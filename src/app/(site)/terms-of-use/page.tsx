@@ -16,7 +16,7 @@ export default function TermsOfUsePage() {
         backgroundImage="/img/PRO-2.jpg"
       />
 
-      <section className="py-20 px-6 md:px-12 lg:px-16 lg:py-28">
+      <section className="py-20 px-6 md:px-12 lg:px-16 lg:py-22">
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg text-gray-600 max-w-none">
             <h2 className="text-3xl font-bold text-[#121212] mb-6">1. Terms</h2>

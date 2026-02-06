@@ -7,7 +7,8 @@ export const projects = [
     location: "KUDUKKIL",
     title: "Residential Series",
     description: "Premium residential lighting solution featuring modern LED fixtures and smart control systems.",
-    category: "Residential"
+    category: "Interior Residential",
+    client: "Mr. John Doe"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const projects = [
     location: "KOOLIMAD",
     title: "Commercial Logic",
     description: "Energy-efficient commercial lighting design for office spaces and retail showrooms.",
-    category: "Commercial"
+    category: "Interior Commercial",
+    client: "Tech Solutions Ltd"
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ export const projects = [
     location: "KODENCHERY",
     title: "Aero-Electric",
     description: "Specialized industrial lighting implementation focusing on durability and high performance.",
-    category: "Industrial"
+    category: "Architectural Commercial & Residential",
+    client: "Aero Dynamics"
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const projects = [
     location: "KALARIKANDY",
     title: "Urban Flow",
     description: "Architectural outdoor lighting that enhances urban landscapes and public spaces.",
-    category: "Outdoor"
+    category: "Interior Hospitality",
+    client: "City Planning Corp"
   },
 ];

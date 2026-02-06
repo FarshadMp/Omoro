@@ -29,7 +29,7 @@ const values = [
 
 export default function CoreValuesSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-22">
       <div className="px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mb-16">
           <motion.h2

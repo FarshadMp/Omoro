@@ -7,7 +7,7 @@ import { Linkedin } from "lucide-react";
 
 export default function FounderSection() {
   return (
-    <section className="bg-[#F5F5F5] py-20 lg:py-28">
+    <section className="bg-[#F5F5F5] py-20 lg:py-22">
       <div className="container mx-auto px-6 md:px-12 lg:px-16">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

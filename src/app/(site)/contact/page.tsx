@@ -12,13 +12,10 @@ import { saveEnquiry } from "@/services/db";
 
 // ... existing imports
 
-import Captcha, { CaptchaHandle } from "@/components/Captcha"; // Adjust path as needed
-
 // ... existing imports
 
 export default function ContactPage() {
   const [enquiryType, setEnquiryType] = useState("general");
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
 
   const [formData, setFormData] = useState({
     //...
@@ -35,11 +32,6 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!isCaptchaValid) {
-      alert("Please enter both the correct security code.");
-      return;
-    }
 
     // Save to Admin DB
     try {
@@ -118,7 +110,7 @@ Message: ${formData.message}`,
       />
 
       {/* Branches Section */}
-      <section className="pt-20 lg:pt-28 bg-white px-6 md:px-12 lg:px-16 border-t border-gray-100">
+      <section className="pt-20 lg:pt-22 bg-white px-6 md:px-12 lg:px-16 border-t border-gray-100">
         <div>
           <div className="text-center mb-16">
             <span className="text-primary font-bold text-sm tracking-widest uppercase mb-4 block">
@@ -139,7 +131,7 @@ Message: ${formData.message}`,
               {
                 title: "Mukkam Branch",
                 image: "/img/mukkam_branch.png",
-                address: "OGGI BRAND FACTORY, Mukkam, Kozhikode, Kerala 673602",
+                address: "Areekode Road, Mukkam, Kozhikode, Kerala 673602",
                 phones: ["+91 9544061145", "+91 2111 299 200"],
                 email: "enquiries@omoro.in",
               },
@@ -147,7 +139,7 @@ Message: ${formData.message}`,
                 title: "Karamoola Branch",
                 image: "/img/karamoola_branch.png",
                 address:
-                  "Near Karamoola Junction, Kozhikode District, Kerala 673601",
+                  "Night Light, Mukkam - Koodaranji Rd, Kumaranallur, Kerala 673602",
                 phones: ["+91 9544061145", "+91 9123456789"],
                 email: "office.karamoola@omoro.in",
               },
@@ -212,7 +204,7 @@ Message: ${formData.message}`,
         </div>
       </section>
 
-      <section className="py-20 lg:py-28 px-6 md:px-12 lg:px-16">
+      <section className="py-20 lg:py-22 px-6 md:px-12 lg:px-16">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 pt-10 border-t border-gray-100">
             <div>
@@ -399,11 +391,6 @@ Message: ${formData.message}`,
             <div className="space-y-6">
               {/* ... consent checkbox ... */}
               {/* ... */}
-            </div>
-
-            {/* Captcha */}
-            <div className="max-w-md">
-              <Captcha onValidate={setIsCaptchaValid} />
             </div>
 
             {/* Submit */}

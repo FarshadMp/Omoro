@@ -179,81 +179,69 @@ export default function ProductDetailsPage() {
                 />
               </div>
             </div>
+          </div>
 
-            {/* Description */}
-            <div>
+          <div className="hidden lg:block lg:col-span-3 sticky top-20">
+            <div className="bg-white rounded-[1.2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Description & Highlights
               </h3>
-              <div className="bg-white rounded-[1rem] p-5 md:p-8 border border-gray-200 text-gray-600 leading-relaxed">
+
+              <div className="text-gray-600 leading-relaxed mb-6">
                 <p className="mb-6 text-sm text-gray-600 leading-relaxed">
                   {product.description ||
                     `Experience the perfect blend of style and functionality with our ${product.title}. Designed to elevate your space with premium materials and cutting-edge lighting technology.`}
                 </p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5" />
+                    <span className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
                     </span>
-                    <span className="font-medium text-gray-700">
+                    <span className="text-sm font-medium text-gray-700">
                       Premium finish and durable construction
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5" />
+                    <span className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
                     </span>
-                    <span className="font-medium text-gray-700">
+                    <span className="text-sm font-medium text-gray-700">
                       Energy efficient lighting technology
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5" />
+                    <span className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
                     </span>
-                    <span className="font-medium text-gray-700">
+                    <span className="text-sm font-medium text-gray-700">
                       Easy installation and maintenance
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5" />
+                    <span className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-[#04AFE2] shrink-0 mt-0.5">
+                      <Check className="w-3 h-3" />
                     </span>
-                    <span className="font-medium text-gray-700">
+                    <span className="text-sm font-medium text-gray-700">
                       Certified safety standards
                     </span>
                   </li>
                 </ul>
               </div>
-            </div>
-          </div>
 
-          {/* Right Column: Pricing & Action (Desktop Only) */}
-          <div className="hidden lg:block lg:col-span-3 sticky top-20">
-            <div className="bg-white rounded-[1.2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900">Pricing</h3>
+              <div className="border-t border-gray-100 pt-6">
+                <div className="flex justify-between items-center py-2 mb-4">
+                  <span className="text-gray-500 text-sm font-medium">
+                    Included Warranty
+                  </span>
+                  <span className="font-bold text-gray-900">
+                    {product.warranty}
+                  </span>
+                </div>
 
-              <div className="flex justify-between items-center py-2 mb-4">
-                <span className="text-gray-500 text-sm font-medium">
-                  Included Warranty
-                </span>
-                <span className="font-bold text-gray-900">
-                  {product.warranty}
-                </span>
-              </div>
-
-              {/* Highlighted Price Box matching reference style */}
-              <div className="bg-gradient-to-br from-[#04AFE2] to-[#1CB39D] rounded-3xl p-6 text-white relative overflow-hidden">
-                <div className="relative z-10">
-                  <p className="text-white/80 text-xs font-semibold tracking-wider mb-2">
-                    Total Price (MRP)
+                <div className="bg-gradient-to-br from-[#04AFE2] to-[#1CB39D] rounded-3xl p-6 text-white text-center">
+                  <p className="text-white/90 text-sm font-medium mb-4">
+                    Contact us for price details and exclusive offers
                   </p>
-                  <div className="flex items-baseline gap-1 mb-6">
-                    <h4 className="text-4xl font-bold">₹{product.mrp}</h4>
-                    <span className="text-sm opacity-80 font-medium">
-                      / unit
-                    </span>
-                  </div>
 
                   <EnquireButton
                     productName={product.title}
@@ -261,7 +249,7 @@ export default function ProductDetailsPage() {
                     mrp={product.mrp}
                     className="w-full py-3 bg-white text-gray-900 rounded-full font-bold text-lg hover:bg-gray-50 transition-transform active:scale-[0.98] flex items-center justify-center gap-2"
                   >
-                    Enquire Now
+                    Contact for Price
                   </EnquireButton>
                 </div>
               </div>
@@ -274,10 +262,8 @@ export default function ProductDetailsPage() {
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 pb-8 z-50 lg:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
         <div className="flex items-center gap-4">
           <div className="flex-1">
-            <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-1">
-              Total Price
-            </p>
-            <h4 className="text-2xl font-bold text-gray-900">₹{product.mrp}</h4>
+            <h4 className="text-lg font-bold text-gray-900">{product.title}</h4>
+            <p className="text-xs text-gray-500">{product.modelNumber}</p>
           </div>
           <EnquireButton
             productName={product.title}
@@ -285,7 +271,7 @@ export default function ProductDetailsPage() {
             mrp={product.mrp}
             className="flex-1 py-3.5 bg-gradient-to-r from-[#04AFE2] to-[#1CB39D] text-white rounded-full font-bold text-sm shadow-lg shadow-teal-500/20 active:scale-[0.98] transition-all flex items-center justify-center"
           >
-            Enquire Now
+            Contact for Price
           </EnquireButton>
         </div>
       </div>

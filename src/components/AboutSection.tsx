@@ -26,7 +26,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section className="bg-white py-20 lg:py-28 overflow-hidden">
+    <section className="bg-white py-20 lg:py-22 overflow-hidden">
       <div className="px-6 md:px-12 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-10 md:gap-80 relative">
           {/* Left Column (Metadata/Tag) */}

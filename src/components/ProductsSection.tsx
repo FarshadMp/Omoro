@@ -116,7 +116,7 @@ export default function ProductsSection() {
                   href={`/products/${product.slug}`}
                   className="block w-full h-full relative"
                 >
-                  <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden mb-2 bg-gray-100 border border-gray-100">
+                  <div className="relative w-full aspect-square rounded-none overflow-hidden mb-2 bg-gray-100 border border-gray-100">
                     <Image
                       src={product.image}
                       alt={product.title}

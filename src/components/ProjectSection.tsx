@@ -65,7 +65,7 @@ export default function ProjectSection() {
   }, []);
 
   return (
-    <section className="bg-white pb-20 lg:pb-28 overflow-hidden">
+    <section className="bg-white pb-20 lg:pb-22 overflow-hidden">
       <div className="flex flex-col items-center w-full">
         {/* Header Section - Container Constrained */}
         <motion.div

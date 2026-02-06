@@ -7,7 +7,14 @@ import CtaSection from "@/components/CtaSection";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { projects as staticProjects } from "@/data/projects";
-import { ArrowLeft, MapPin, Calendar, Tag, CheckCircle2 } from "lucide-react";
+import {
+  ArrowLeft,
+  MapPin,
+  Calendar,
+  Tag,
+  CheckCircle2,
+  User,
+} from "lucide-react";
 import { getItem } from "@/utils/storage";
 import ProductImageSlider from "@/components/ProductImageSlider";
 
@@ -89,17 +96,18 @@ export default function ProjectDetailsPage() {
             Back to Our Projects
           </Link>
 
-          <div className="w-full mb-12">
-            <ProductImageSlider
-              images={project.images || [project.image]}
-              title={project.title}
-            />
-          </div>
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+            {/* Image Slider - 75% */}
+            <div className="w-full lg:w-[75%]">
+              <ProductImageSlider
+                images={project.images || [project.image]}
+                title={project.title}
+              />
+            </div>
 
-          {/* Text Content */}
-          <div className="max-w-4xl">
-            <div>
-              <div className="flex items-center gap-3 mb-6">
+            {/* Content Sidebar - 25% */}
+            <div className="w-full lg:w-[25%] lg:sticky lg:top-32">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="px-3 py-1 bg-[#04AFE2]/10 text-[#04AFE2] rounded-full text-xs font-bold uppercase tracking-widest">
                   {project.category}
                 </span>
@@ -109,25 +117,40 @@ export default function ProjectDetailsPage() {
                   {project.location}
                 </span>
               </div>
-              <h1 className="text-2xl md:text-4xl font-bold text-[#121212] mb-4 leading-[1.1] tracking-tight">
+
+              <h1 className="text-2xl md:text-3xl font-bold text-[#121212] mb-4 leading-tight">
                 {project.title}
               </h1>
-              <p className="text-gray-600 text-base text-gray-600 leading-relaxed mb-10">
+
+              <p className="text-sm text-gray-600 leading-relaxed mb-8">
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-8 pt-8 border-t border-gray-100">
-                <div className="flex flex-col gap-1">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+              <div className="space-y-4 pt-6 border-t border-gray-100">
+                {project.client && (
+                  <div className="flex items-center justify-between lg:block lg:space-y-1">
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 mb-1">
+                      <User className="w-4 h-4" /> Client
+                    </span>
+                    <span className="text-[#121212] font-semibold text-sm">
+                      {project.client}
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center justify-between lg:block lg:space-y-1">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 mb-1">
                     <Calendar className="w-4 h-4" /> Year
                   </span>
-                  <span className="text-[#121212] font-semibold">2024</span>
+                  <span className="text-[#121212] font-semibold text-sm">
+                    2024
+                  </span>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+
+                <div className="flex items-center justify-between lg:block lg:space-y-1">
+                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 mb-1">
                     <Tag className="w-4 h-4" /> Type
                   </span>
-                  <span className="text-[#121212] font-semibold">
+                  <span className="text-[#121212] font-semibold text-sm">
                     {project.category} Design
                   </span>
                 </div>

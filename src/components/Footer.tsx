@@ -46,12 +46,12 @@ export default function Footer() {
                 Contact Us
               </h3>
               <div className="flex text-sm flex-col gap-4 text-[#121212]">
-                <p>+44 (0) 20 7183 3710</p>
+                <p>+91 9544061145</p>
                 <a
-                  href="mailto:enquiries.uk@omoro.com"
+                  href="mailto:enquiries@omoro.in"
                   className="hover:text-[#04AFE2] transition-colors"
                 >
-                  enquiries.uk@omoro.com
+                  enquiries@omoro.in
                 </a>
               </div>
             </div>
@@ -62,46 +62,52 @@ export default function Footer() {
 
           {/* Right Column Group */}
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 lg:mt-0">
-            {/* Head Office & Mauritius */}
+            {/* Mukkam Branch */}
             <div className="flex flex-col gap-12">
               <div>
                 <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">
-                  Head Office
+                  Mukkam Branch
                 </h3>
                 <div className="flex flex-col gap-4 text-[#121212] text-sm">
                   <p className="leading-relaxed">
-                    A-82, MIDC Industrial Estate, Indapur,
+                    Areekode Road, Mukkam,
                     <br />
-                    Dist Pune 413132, Maharashtra, India
+                    Kozhikode, Kerala 673602
                   </p>
-                  <p>+91 2111 299 200</p>
+                  <div className="flex flex-col">
+                    <p>+91 9544061145</p>
+                    <p>+91 2111 299 200</p>
+                  </div>
                   <a
-                    href="mailto:enquiries.india@omoro.in"
+                    href="mailto:enquiries@omoro.in"
                     className="hover:text-[#04AFE2] transition-colors"
                   >
-                    enquiries.india@omoro.in
+                    enquiries@omoro.in
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* India Factory */}
+            {/* Karamoola Branch */}
             <div>
               <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">
-                India Factory
+                Karamoola Branch
               </h3>
               <div className="flex flex-col gap-4 text-[#121212] text-sm">
                 <p className="leading-relaxed">
-                  A-82, MIDC Industrial Estate, Indapur,
+                  Night Light, Mukkam - Koodaranji Rd,
                   <br />
-                  Dist Pune 413132, Maharashtra, India
+                  Kumaranallur, Kerala 673602
                 </p>
-                <p>+91 2111 299 200</p>
+                <div className="flex flex-col">
+                  <p>+91 9544061145</p>
+                  <p>+91 9123456789</p>
+                </div>
                 <a
-                  href="mailto:enquiries.india@omoro.in"
+                  href="mailto:office.karamoola@omoro.in"
                   className="hover:text-[#04AFE2] transition-colors"
                 >
-                  enquiries.india@omoro.in
+                  office.karamoola@omoro.in
                 </a>
               </div>
             </div>

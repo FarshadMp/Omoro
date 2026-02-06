@@ -13,8 +13,6 @@ interface EnquireButtonProps {
   children?: React.ReactNode;
 }
 
-import Captcha, { CaptchaHandle } from "./Captcha";
-
 // ... existing imports
 
 export default function EnquireButton({
@@ -25,8 +23,6 @@ export default function EnquireButton({
   children,
 }: EnquireButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-  const captchaRef = React.useRef<CaptchaHandle>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,21 +30,8 @@ export default function EnquireButton({
     place: "",
   });
 
-  // Reset captcha when modal opens
-  React.useEffect(() => {
-    if (isOpen) {
-      captchaRef.current?.reset();
-      setIsCaptchaValid(false);
-    }
-  }, [isOpen]);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!isCaptchaValid) {
-      alert("Please enter the correct security code.");
-      return;
-    }
 
     // Save to Admin DB
     try {
@@ -188,10 +171,6 @@ Message: Interested in product`,
                       className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all text-gray-900"
                     />
                   </div>
-                </div>
-
-                <div className="pt-2">
-                  <Captcha ref={captchaRef} onValidate={setIsCaptchaValid} />
                 </div>
 
                 <button

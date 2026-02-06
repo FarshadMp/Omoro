@@ -98,7 +98,7 @@ export default function TimelineSection() {
   };
 
   return (
-    <section className="bg-[#1a1a1a] py-20 lg:py-28 text-white overflow-hidden">
+    <section className="bg-[#1a1a1a] py-20 lg:py-22 text-white overflow-hidden">
       <div className="px-6 md:px-12 lg:px-16 flex flex-col h-full">
         {/* Header */}
         <motion.div

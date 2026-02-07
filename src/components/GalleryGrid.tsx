@@ -9,7 +9,8 @@ import { galleryImages as initialGalleryImages } from "@/data/gallery";
 import { getItem } from "@/utils/storage";
 
 export default function GalleryGrid() {
-  const [galleryImages, setGalleryImages] = useState(initialGalleryImages);
+  const [galleryImages, setGalleryImages] =
+    useState<any[]>(initialGalleryImages);
 
   React.useEffect(() => {
     const loadData = async () => {

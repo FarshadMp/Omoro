@@ -17,7 +17,7 @@ import { getItem, setItem } from "@/utils/storage";
 
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [projects, setProjects] = useState(initialProjects);
+  const [projects, setProjects] = useState<any[]>(initialProjects);
 
   React.useEffect(() => {
     const loadData = async () => {

@@ -12,7 +12,7 @@ import { getItem } from "@/utils/storage";
 export default function ProjectSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [projects, setProjects] = useState(initialProjects);
+  const [projects, setProjects] = useState<any[]>(initialProjects);
 
   useEffect(() => {
     const loadData = async () => {

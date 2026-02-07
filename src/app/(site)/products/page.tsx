@@ -11,7 +11,7 @@ import CtaSection from "@/components/CtaSection";
 
 export default function AllProductsPage() {
   const categoryTitle = "All Products";
-  const [allProducts, setAllProducts] = React.useState(products);
+  const [allProducts, setAllProducts] = React.useState<any[]>(products);
 
   React.useEffect(() => {
     const loadData = async () => {

@@ -18,7 +18,7 @@ import { getItem, setItem } from "@/utils/storage";
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   // In a real app, products would come from an API/Context
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState<any[]>(initialProducts);
 
   React.useEffect(() => {
     const loadData = async () => {

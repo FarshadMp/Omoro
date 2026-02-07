@@ -31,7 +31,7 @@ export default function ProjectDetailsPage() {
     if (!projectSlug) return;
 
     const loadData = async () => {
-      let allProjects = [...staticProjects];
+      let allProjects: any[] = [...staticProjects];
 
       // Check for full override list first
       const fullList = await getItem<any[]>("projects_full_list");

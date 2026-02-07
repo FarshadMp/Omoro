@@ -11,7 +11,7 @@ import { getItem } from "@/utils/storage";
 export default function ProductsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [products, setProducts] = useState(initialProducts);
+  const [products, setProducts] = useState<any[]>(initialProducts);
 
   useEffect(() => {
     const loadData = async () => {

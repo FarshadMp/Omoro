@@ -9,7 +9,7 @@ import { getItem, setItem } from "@/utils/storage";
 
 export default function GalleryPage() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [images, setImages] = useState(initialImages);
+  const [images, setImages] = useState<any[]>(initialImages);
   const [selectedImage, setSelectedImage] = useState<any | null>(null);
 
   React.useEffect(() => {

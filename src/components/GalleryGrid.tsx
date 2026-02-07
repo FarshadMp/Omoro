@@ -30,9 +30,7 @@ export default function GalleryGrid() {
     loadData();
   }, []);
 
-  const [selectedImage, setSelectedImage] = useState<
-    null | (typeof initialGalleryImages)[0]
-  >(null);
+  const [selectedImage, setSelectedImage] = useState<any | null>(null);
 
   return (
     <section className="bg-white py-20 px-4 md:px-8">

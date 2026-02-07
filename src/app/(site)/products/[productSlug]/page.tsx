@@ -33,7 +33,7 @@ export default function ProductDetailsPage() {
     if (!productSlug) return;
 
     const loadData = async () => {
-      let allProducts = [...staticProducts];
+      let allProducts: any[] = [...staticProducts];
 
       // Check for full override list first
       const fullList = await getItem<any[]>("products_full_list");

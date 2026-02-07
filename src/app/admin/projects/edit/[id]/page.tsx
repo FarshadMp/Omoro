@@ -22,6 +22,7 @@ export default function EditProjectPage({
     category: "Residential",
     description: "",
     year: "",
+    client: "",
   });
   const [images, setImages] = useState<string[]>([]);
   const [projectId, setProjectId] = useState<number | null>(null);
@@ -64,6 +65,7 @@ export default function EditProjectPage({
             category: project.category || "Residential",
             description: project.description || "",
             year: project.year || "",
+            client: project.client || "",
           });
 
           if (project.images && Array.isArray(project.images)) {
@@ -188,7 +190,7 @@ export default function EditProjectPage({
   if (dataLoading) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <Loader2 className="animate-spin text-[#1CB39D]" size={40} />
+        <Loader2 className="animate-spin text-[#04AFE2]" size={40} />
       </div>
     );
   }
@@ -235,7 +237,7 @@ export default function EditProjectPage({
                   </div>
                 ))}
               </div>
-              <label className="w-full aspect-video bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-6 text-center hover:bg-gray-50/50 hover:border-[#1CB39D]/50 transition-colors cursor-pointer group">
+              <label className="w-full aspect-video bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-6 text-center hover:bg-gray-50/50 hover:border-[#04AFE2]/50 transition-colors cursor-pointer group">
                 <input
                   type="file"
                   multiple
@@ -244,7 +246,7 @@ export default function EditProjectPage({
                   onChange={handleImageUpload}
                 />
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Upload className="w-5 h-5 text-gray-400 group-hover:text-[#1CB39D]" />
+                  <Upload className="w-5 h-5 text-gray-400 group-hover:text-[#04AFE2]" />
                 </div>
                 <p className="text-sm font-medium text-gray-700">
                   Click to upload images
@@ -275,7 +277,7 @@ export default function EditProjectPage({
                     value={formData.title}
                     onChange={handleChange}
                     placeholder="e.g. Modern Villa Lighting"
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
                   />
                 </div>
 
@@ -290,7 +292,7 @@ export default function EditProjectPage({
                       value={formData.location}
                       onChange={handleChange}
                       placeholder="City, State"
-                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
                     />
                   </div>
 
@@ -302,7 +304,7 @@ export default function EditProjectPage({
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors appearance-none"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors appearance-none"
                     >
                       {categories.map((cat) => (
                         <option key={cat.value} value={cat.value}>
@@ -323,7 +325,21 @@ export default function EditProjectPage({
                     value={formData.year}
                     onChange={handleChange}
                     placeholder="2024"
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Client Name
+                  </label>
+                  <input
+                    type="text"
+                    name="client"
+                    value={formData.client}
+                    onChange={handleChange}
+                    placeholder="e.g. Mr. John Doe"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
                   />
                 </div>
 
@@ -336,7 +352,7 @@ export default function EditProjectPage({
                     rows={4}
                     value={formData.description}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors resize-none"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors resize-none"
                   />
                 </div>
               </div>
@@ -346,7 +362,7 @@ export default function EditProjectPage({
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-[#1CB39D] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#16a08c] transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#1CB39D]/20"
+                className="flex-1 bg-[#04AFE2] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#16a08c] transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#04AFE2]/20"
               >
                 {loading ? (
                   <>

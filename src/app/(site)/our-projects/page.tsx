@@ -8,42 +8,41 @@ import CtaSection from "@/components/CtaSection";
 import Image from "next/image";
 import { projects as initialProjects } from "@/data/projects";
 import {
-  Plus,
   ArrowRight,
   Layers,
-  Landmark,
-  BedDouble,
   Armchair,
   Home,
+  Factory,
+  Trees,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { getItem } from "@/utils/storage";
 
 export default function OurProjectsPage() {
-  const [projects, setProjects] = useState(initialProjects);
+  const [projects, setProjects] = useState<any[]>(initialProjects);
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = [
     { id: "All", label: "All", icon: Layers },
     {
-      id: "Architectural Commercial & Residential",
-      label: "Architectural Commercial & Residential",
-      icon: Landmark,
+      id: "Residential",
+      label: "Residential",
+      icon: Home,
     },
     {
-      id: "Interior Hospitality",
-      label: "Interior Hospitality",
-      icon: BedDouble,
+      id: "Commercial",
+      label: "Commercial",
+      icon: Armchair,
     },
-    { id: "Interior Commercial", label: "Interior Commercial", icon: Armchair },
-    { id: "Interior Residential", label: "Interior Residential", icon: Home },
+    { id: "Industrial", label: "Industrial", icon: Factory },
+    { id: "Outdoor", label: "Outdoor", icon: Trees },
   ];
 
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : projects.filter((project: any) => project.category === activeCategory);
 
   useEffect(() => {
     const loadData = async () => {
@@ -68,7 +67,8 @@ export default function OurProjectsPage() {
       <PageHero
         title="Our Projects"
         subtitle="Exploring our showcase of premium lighting installations across various sectors."
-        backgroundImage="/img/PRO-1.jpg"
+        backgroundImage="/img/pro_ban.png"
+        mobileBackgroundImage="/img/pro_ban_mob.png"
       />
 
       <section className="py-20 lg:py-22 px-6 md:px-12 lg:px-16">

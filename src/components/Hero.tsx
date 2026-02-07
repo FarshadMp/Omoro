@@ -30,14 +30,18 @@ export default function Hero() {
         </h1>
 
         {/* CTA Button */}
-        <div className="flex items-stretch group cursor-pointer shadow-lg">
-          <div className="bg-[#04AFE2] hover:bg-[#1CB39D] text-white px-4 md:px-6 py-3 text-[15px] md:text-base font-normal transition-colors duration-300 flex items-center">
+        {/* CTA Button */}
+        <a
+          href="tel:+919947073112"
+          className="flex items-stretch group cursor-pointer shadow-lg"
+        >
+          <div className="bg-[#04AFE2] hover:bg-[#04AFE2] text-white px-4 md:px-6 py-3 text-[15px] md:text-base font-normal transition-colors duration-300 flex items-center">
             Book A Discovery Call
           </div>
-          <div className="bg-[#04AFE2] hover:bg-[#1CB39D] text-white px-4 md:px-4 py-3 text-[15px] md:text-base flex items-center justify-center border-l border-white/20 transition-colors duration-300">
+          <div className="bg-[#04AFE2] hover:bg-[#04AFE2] text-white px-4 md:px-4 py-3 text-[15px] md:text-base flex items-center justify-center border-l border-white/20 transition-colors duration-300">
             <ArrowUpRight className="w-5 md:w-6 h-5 md:h-6" />
           </div>
-        </div>
+        </a>
       </div>
 
       {/* Bottom Content */}

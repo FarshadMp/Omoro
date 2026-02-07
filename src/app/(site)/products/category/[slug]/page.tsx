@@ -9,6 +9,8 @@ import Footer from "@/components/Footer";
 import CtaSection from "@/components/CtaSection";
 import { use } from "react";
 
+import { getItem } from "@/utils/storage";
+
 // Helper to format category slug to title
 const formatTitle = (slug: string) => {
   return slug
@@ -22,22 +24,35 @@ export default function CategoryPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // Unwrap params using React.use() or await (in async component)
-  // Since this is a client component, we use the `use` hook or async wrapping.
-  // Actually, for client components in Next.js 15+, params is a Promise.
-  // But wait, "use client" implies we need to handle the promise or receive it as resolved if possible?
-  // In Next.js 15, `params` is async. Let's strictly follow async pattern or use `use`.
-  // To avoid complexity with `use` (experimental/new), let's make it an async component (server component) if possible?
-  // But I need state for filters. So it must be a Client Component.
-  // In Client Component, we can use `use(params)`.
-
   const { slug } = use(params);
   const categoryTitle = formatTitle(slug);
-
-  // Products filtered by category only
-  const categoryProducts = products.filter(
-    (product) => product.category === slug,
+  const [categoryProducts, setCategoryProducts] = React.useState<any[]>(
+    (products as any[]).filter((p) => p.category === slug),
   );
+
+  React.useEffect(() => {
+    const loadData = async () => {
+      let currentProducts = products as any[];
+
+      // Check for full override list first
+      const fullList = await getItem<any[]>("products_full_list");
+      if (fullList) {
+        currentProducts = fullList;
+      } else {
+        // Load local products from local storage fallback
+        const localProducts = await getItem<any[]>("local_products");
+        if (localProducts) {
+          currentProducts = [...localProducts, ...products];
+        }
+      }
+
+      // Filter by category
+      setCategoryProducts(
+        currentProducts.filter((product) => product.category === slug),
+      );
+    };
+    loadData();
+  }, [slug]);
 
   return (
     <main className="min-h-screen bg-white">
@@ -76,7 +91,7 @@ export default function CategoryPage({
                   href={`/products/${product.slug}`}
                   className="group block"
                 >
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-2 bg-gray-100 border border-gray-100">
+                  <div className="relative aspect-square rounded-none overflow-hidden mb-2 bg-gray-100 border border-gray-100">
                     <Image
                       src={product.image}
                       alt={product.title}

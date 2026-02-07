@@ -15,6 +15,7 @@ export default function AddProjectPage() {
     category: "Residential",
     description: "",
     year: new Date().getFullYear().toString(),
+    client: "",
   });
   const [images, setImages] = useState<string[]>([]);
   const router = useRouter();
@@ -144,7 +145,7 @@ export default function AddProjectPage() {
                   </div>
                 ))}
               </div>
-              <label className="w-full aspect-video bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-6 text-center hover:bg-gray-50/50 hover:border-[#1CB39D]/50 transition-colors cursor-pointer group">
+              <label className="w-full aspect-video bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-6 text-center hover:bg-gray-50/50 hover:border-[#04AFE2]/50 transition-colors cursor-pointer group">
                 <input
                   type="file"
                   multiple
@@ -153,7 +154,7 @@ export default function AddProjectPage() {
                   onChange={handleImageUpload}
                 />
                 <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Upload className="w-5 h-5 text-gray-400 group-hover:text-[#1CB39D]" />
+                  <Upload className="w-5 h-5 text-gray-400 group-hover:text-[#04AFE2]" />
                 </div>
                 <p className="text-sm font-medium text-gray-700">
                   Click to upload images
@@ -184,7 +185,7 @@ export default function AddProjectPage() {
                     value={formData.title}
                     onChange={handleChange}
                     placeholder="e.g. Modern Villa Lighting"
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
                   />
                 </div>
 
@@ -199,7 +200,7 @@ export default function AddProjectPage() {
                       value={formData.location}
                       onChange={handleChange}
                       placeholder="City, State"
-                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
                     />
                   </div>
 
@@ -211,7 +212,7 @@ export default function AddProjectPage() {
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors appearance-none"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors appearance-none"
                     >
                       {categories.map((cat) => (
                         <option key={cat.value} value={cat.value}>
@@ -222,18 +223,34 @@ export default function AddProjectPage() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Completion Year
-                  </label>
-                  <input
-                    type="text"
-                    name="year"
-                    value={formData.year}
-                    onChange={handleChange}
-                    placeholder="2024"
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">
+                      Completion Year
+                    </label>
+                    <input
+                      type="text"
+                      name="year"
+                      value={formData.year}
+                      onChange={handleChange}
+                      placeholder="2024"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-gray-700">
+                      Client Name
+                    </label>
+                    <input
+                      type="text"
+                      name="client"
+                      value={formData.client}
+                      onChange={handleChange}
+                      placeholder="e.g. Mr. John Doe"
+                      className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
@@ -245,7 +262,7 @@ export default function AddProjectPage() {
                     rows={4}
                     value={formData.description}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1CB39D]/20 focus:border-[#1CB39D] transition-colors resize-none"
+                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors resize-none"
                   />
                 </div>
               </div>
@@ -255,7 +272,7 @@ export default function AddProjectPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-[#1CB39D] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#16a08c] transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#1CB39D]/20"
+                className="flex-1 bg-[#04AFE2] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#16a08c] transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-[#04AFE2]/20"
               >
                 {loading ? (
                   <>

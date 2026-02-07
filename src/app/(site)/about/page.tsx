@@ -23,6 +23,8 @@ export default function AboutPage() {
       <PageHero
         title="About Omoro"
         subtitle="Redefining the future of outdoor adventure through sustainable innovation and cutting-edge design."
+        backgroundImage="/img/ab_ban.png"
+        mobileBackgroundImage="/img/ab_ban_mob.png"
       />
       <AboutSection />
       <FounderSection />

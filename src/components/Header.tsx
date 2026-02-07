@@ -94,12 +94,6 @@ export default function Header({ forceDark = false }: { forceDark?: boolean }) {
           >
             About
           </Link>
-          <Link
-            href="/why-omoro"
-            className={`flex items-center py-4 transition-colors duration-500 hover:text-[#04AFE2]`}
-          >
-            Why Omoro
-          </Link>
 
           <div className="relative group h-full flex items-center">
             <button
@@ -177,7 +171,7 @@ export default function Header({ forceDark = false }: { forceDark?: boolean }) {
             <div className="hidden md:block">
               <Link href="#" className="inline-block">
                 <motion.div
-                  className="flex items-center justify-center w-8 h-8 bg-[#04AFE2] text-white transition-colors duration-300 group-hover:bg-[#1CB39D]"
+                  className="flex items-center justify-center w-8 h-8 bg-[#04AFE2] text-white transition-colors duration-300 group-hover:bg-[#04AFE2]"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -217,7 +211,7 @@ export default function Header({ forceDark = false }: { forceDark?: boolean }) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 h-dvh h-screen w-screen bg-gradient-to-br from-[#04AFE2] to-[#1CB39D] z-[60] md:hidden flex flex-col"
+            className="fixed inset-0 h-dvh h-screen w-screen bg-gradient-to-br from-[#04AFE2] to-[#04AFE2] z-[60] md:hidden flex flex-col"
           >
             {/* Top Bar: Close Button */}
             <div className="flex items-center justify-end px-6 py-4 border-b border-white/20">
@@ -239,13 +233,7 @@ export default function Header({ forceDark = false }: { forceDark?: boolean }) {
               >
                 About
               </Link>
-              <Link
-                href="/why-omoro"
-                className="text-2xl font-medium text-white transition-opacity duration-300 hover:opacity-80"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Why Omoro
-              </Link>
+
               <div className="flex flex-col gap-2">
                 <span className="text-2xl font-medium text-white/50">
                   Products

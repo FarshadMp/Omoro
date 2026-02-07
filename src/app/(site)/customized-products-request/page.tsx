@@ -19,7 +19,8 @@ export default function CustomizedProductsRequestPage() {
       <PageHero
         title="Ask For Customized Light"
         subtitle="Any design in mind?"
-        backgroundImage="/img/PRO-3.jpg"
+        backgroundImage="/img/cz_ban.png"
+        mobileBackgroundImage="/img/cz_ban_mob.png"
       />
       <div className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">

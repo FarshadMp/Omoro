@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 import { projects as staticProjects } from "@/data/projects";
 import {
   ArrowLeft,
+  ArrowRight,
   MapPin,
   Calendar,
   Tag,
@@ -22,6 +23,8 @@ export default function ProjectDetailsPage() {
   const params = useParams();
   const projectSlug = params?.projectSlug as string;
   const [project, setProject] = useState<any>(null);
+  const [prevProject, setPrevProject] = useState<any>(null);
+  const [nextProject, setNextProject] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,8 +45,17 @@ export default function ProjectDetailsPage() {
         }
       }
 
-      const found = allProjects.find((p) => p.slug === projectSlug);
-      setProject(found || null);
+      const index = allProjects.findIndex((p) => p.slug === projectSlug);
+
+      if (index !== -1) {
+        setProject(allProjects[index]);
+        setPrevProject(index > 0 ? allProjects[index - 1] : null);
+        setNextProject(
+          index < allProjects.length - 1 ? allProjects[index + 1] : null,
+        );
+      } else {
+        setProject(null);
+      }
       setLoading(false);
     };
     loadData();
@@ -205,6 +217,45 @@ export default function ProjectDetailsPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Project Navigation */}
+      <section className="py-12 bg-white px-6 md:px-12 lg:px-16 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          {prevProject ? (
+            <Link
+              href={`/our-projects/${prevProject.slug}`}
+              className="group flex flex-col items-start gap-1 text-left"
+            >
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 group-hover:text-[#04AFE2] transition-colors">
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />{" "}
+                Previous
+              </span>
+              <span className="text-lg md:text-xl font-bold text-[#121212] group-hover:text-[#04AFE2] transition-colors line-clamp-1 max-w-[200px] md:max-w-xs">
+                {prevProject.title}
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
+
+          {nextProject ? (
+            <Link
+              href={`/our-projects/${nextProject.slug}`}
+              className="group flex flex-col items-end gap-1 text-right"
+            >
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 group-hover:text-[#04AFE2] transition-colors">
+                Next{" "}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="text-lg md:text-xl font-bold text-[#121212] group-hover:text-[#04AFE2] transition-colors line-clamp-1 max-w-[200px] md:max-w-xs">
+                {nextProject.title}
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
         </div>
       </section>
 

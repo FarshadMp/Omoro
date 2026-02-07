@@ -289,19 +289,6 @@ export default function AddProductPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">
-                    MRP (₹)
-                  </label>
-                  <input
-                    type="text"
-                    name="mrp"
-                    value={formData.mrp}
-                    onChange={handleChange}
-                    placeholder="0.00"
-                    className="w-full px-4 py-2 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#04AFE2]/20 focus:border-[#04AFE2] transition-colors"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
                     Total Size
                   </label>
                   <input

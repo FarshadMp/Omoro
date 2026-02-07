@@ -238,7 +238,7 @@ export default function ProductDetailsPage() {
                   </span>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#04AFE2] to-[#1CB39D] rounded-3xl p-6 text-white text-center">
+                <div className="bg-gradient-to-br from-[#04AFE2] to-[#04AFE2] rounded-3xl p-6 text-white text-center">
                   <p className="text-white/90 text-sm font-medium mb-4">
                     Contact us for price details and exclusive offers
                   </p>
@@ -269,7 +269,7 @@ export default function ProductDetailsPage() {
             productName={product.title}
             modelNumber={product.modelNumber}
             mrp={product.mrp}
-            className="flex-1 py-3.5 bg-gradient-to-r from-[#04AFE2] to-[#1CB39D] text-white rounded-full font-bold text-sm shadow-lg shadow-teal-500/20 active:scale-[0.98] transition-all flex items-center justify-center"
+            className="flex-1 py-3.5 bg-gradient-to-r from-[#04AFE2] to-[#04AFE2] text-white rounded-full font-bold text-sm shadow-lg shadow-teal-500/20 active:scale-[0.98] transition-all flex items-center justify-center"
           >
             Contact for Price
           </EnquireButton>

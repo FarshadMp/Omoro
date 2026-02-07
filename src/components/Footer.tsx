@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { Instagram, Facebook, Youtube, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,7 +19,6 @@ export default function Footer() {
               <ul className="flex flex-col gap-4">
                 {[
                   { name: "About", href: "/about" },
-                  { name: "Why Omoro", href: "/why-omoro" },
                   { name: "All Products", href: "/products" },
                   {
                     name: "Customized Lighting",
@@ -46,12 +46,55 @@ export default function Footer() {
                 Contact Us
               </h3>
               <div className="flex text-sm flex-col gap-4 text-[#121212]">
-                <p>+91 9544061145</p>
+                <a
+                  href="tel:+919544061145"
+                  className="hover:text-[#04AFE2] transition-colors"
+                >
+                  +91 9544061145
+                </a>
                 <a
                   href="mailto:enquiries@omoro.in"
                   className="hover:text-[#04AFE2] transition-colors"
                 >
                   enquiries@omoro.in
+                </a>
+              </div>
+
+              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6 mt-12">
+                Follow Us
+              </h3>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.instagram.com/omoro.lighting/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#04AFE2] hover:border-[#04AFE2] hover:text-white transition-all text-gray-600"
+                >
+                  <Instagram size={18} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#04AFE2] hover:border-[#04AFE2] hover:text-white transition-all text-gray-600"
+                >
+                  <Facebook size={18} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#04AFE2] hover:border-[#04AFE2] hover:text-white transition-all text-gray-600"
+                >
+                  <Youtube size={18} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-[#04AFE2] hover:border-[#04AFE2] hover:text-white transition-all text-gray-600"
+                >
+                  <Twitter size={18} />
                 </a>
               </div>
             </div>
@@ -74,9 +117,19 @@ export default function Footer() {
                     <br />
                     Kozhikode, Kerala 673602
                   </p>
-                  <div className="flex flex-col">
-                    <p>+91 9544061145</p>
-                    <p>+91 2111 299 200</p>
+                  <div className="flex flex-col gap-1">
+                    <a
+                      href="tel:+919544061145"
+                      className="hover:text-[#04AFE2] transition-colors"
+                    >
+                      +91 9544061145
+                    </a>
+                    <a
+                      href="tel:+912111299200"
+                      className="hover:text-[#04AFE2] transition-colors"
+                    >
+                      +91 2111 299 200
+                    </a>
                   </div>
                   <a
                     href="mailto:enquiries@omoro.in"
@@ -99,9 +152,19 @@ export default function Footer() {
                   <br />
                   Kumaranallur, Kerala 673602
                 </p>
-                <div className="flex flex-col">
-                  <p>+91 9544061145</p>
-                  <p>+91 9123456789</p>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="tel:+919544061145"
+                    className="hover:text-[#04AFE2] transition-colors"
+                  >
+                    +91 9544061145
+                  </a>
+                  <a
+                    href="tel:+919123456789"
+                    className="hover:text-[#04AFE2] transition-colors"
+                  >
+                    +91 9123456789
+                  </a>
                 </div>
                 <a
                   href="mailto:office.karamoola@omoro.in"
@@ -131,7 +194,17 @@ export default function Footer() {
               Terms of Use
             </Link>
           </div>
-          <p className="mt-4 md:mt-0">Website by Farshad</p>
+          <p className="mt-4 md:mt-0">
+            Website by{" "}
+            <a
+              href="https://farshad.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#121212] transition-colors"
+            >
+              Farshad
+            </a>
+          </p>
         </div>
       </div>
     </footer>

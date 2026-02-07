@@ -53,7 +53,7 @@ export default function LoginPage() {
         className="w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl relative z-10"
       >
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#04AFE2] to-[#1CB39D] bg-clip-text text-transparent mb-2">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#04AFE2] to-[#04AFE2] bg-clip-text text-transparent mb-2">
             Welcome Back
           </h1>
           <p className="text-white text-sm">Sign in to Omoro Admin Dashboard</p>

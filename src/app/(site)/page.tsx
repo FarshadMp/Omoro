@@ -39,7 +39,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Header />
       <Hero />
-      <AboutSection />
+      <AboutSection isHomePage={true} />
       <ProductsSection />
       <StatsSection />
       <ProjectSection />

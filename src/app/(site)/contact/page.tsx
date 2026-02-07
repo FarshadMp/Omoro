@@ -106,7 +106,8 @@ Message: ${formData.message}`,
       <PageHero
         title="Contact Us"
         subtitle="Get in touch with our team for any inquiries or support."
-        backgroundImage="/img/PRO-4.jpg"
+        backgroundImage="/img/co_ban.png"
+        mobileBackgroundImage="/img/co_ban_mob.png"
       />
 
       {/* Branches Section */}

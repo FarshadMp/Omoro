@@ -19,7 +19,8 @@ export default function GalleryPage() {
       <PageHero
         title="Our Gallery"
         subtitle="Visualizing perfection in every beam of light."
-        backgroundImage="/img/PRO-1.jpg"
+        backgroundImage="/img/ga_ban.png"
+        mobileBackgroundImage="/img/ga_ban_mob.png"
       />
 
       <GalleryGrid />

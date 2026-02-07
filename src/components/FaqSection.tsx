@@ -7,33 +7,33 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     id: 1,
-    question: "What makes Omoro lighting solutions different?",
+    question: "What is Omoro Lighting?",
     answer:
-      "Our solutions combine advanced LED technology with sustainable, modular designs. We prioritize energy efficiency and aesthetic flexibility, allowing for seamless integration into any architectural environment.",
+      "Omoro Lighting is a trusted lighting showroom and solution provider offering premium LED and decorative lighting products for homes, offices, and commercial spaces. From stylish designs to energy-saving solutions, we help you light up every space perfectly.",
   },
   {
     id: 2,
-    question: "Do you offer custom lighting designs?",
+    question: "How does Omoro Lighting work?",
     answer:
-      "Yes, we specialize in bespoke lighting solutions tailored to specific project requirements. Our team works closely with architects and designers to create unique installations.",
+      "Our process is simple: you visit our showroom or contact us, share your lighting requirement, and our team suggests the best products based on your space, budget, and design preferences. We also support selection, consultation, and delivery for a smooth experience.",
   },
   {
     id: 3,
-    question: "Are your products energy efficient?",
+    question: "How are you different from other lighting shops?",
     answer:
-      "Absolutely. Our entire product line is built on high-efficiency LED platforms designed to minimize power consumption while maximizing lumen output and longevity.",
+      "Unlike regular lighting stores, Omoro Lighting provides expert guidance, premium collections, and genuine branded products. We focus on quality, modern designs, and customer satisfaction, ensuring you get the right lighting solution without confusion.",
   },
   {
     id: 4,
-    question: "What is the warranty period for your products?",
+    question: "What products does Omoro Lighting offer?",
     answer:
-      "We offer an industry-leading warranty of 5 years on most of our commercial lighting fixtures, ensuring peace of mind and long-term reliability.",
+      "Omoro Lighting offers a wide range of products including LED bulbs, panel lights, tube lights, chandeliers, pendant lights, wall lights, ceiling lights, outdoor lights, street lights, and decorative lighting solutions. We also provide modern lighting options for both residential and commercial projects.",
   },
   {
     id: 5,
-    question: "How can I request a quote?",
+    question: "How much do your products cost?",
     answer:
-      "You can request a quote by contacting our sales team through the 'Contact' page or by using the inquiry form on specific product pages.",
+      "Our pricing depends on the product type, design, and brand. We provide lighting solutions for every budget—from affordable LED options to premium decorative lights. Contact us or visit our showroom for the latest pricing and offers.",
   },
 ];
 

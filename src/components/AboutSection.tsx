@@ -4,7 +4,11 @@ import { ArrowRight } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function AboutSection() {
+export default function AboutSection({
+  isHomePage = false,
+}: {
+  isHomePage?: boolean;
+}) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -57,35 +61,67 @@ export default function AboutSection() {
               variants={itemVariants}
               className="text-4xl md:text-6xl lg:text-7xl font-normal leading-[1.1] tracking-tight mb-8 text-[#121212]"
             >
-              Combining smart lighting, energy efficiency, and design
-              intelligence into a{" "}
-              <span className="text-gray-300">future-ready ecosystem.</span>
+              Lighting Spaces. Elevating Lifestyles. Perfect{" "}
+              <span className="text-gray-300">Lighting for Every Space.</span>
             </motion.h2>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-base text-gray-600 leading-relaxed max-w-2xl mb-8 md:mb-12"
-            >
-              Our platform enables precise, dynamic control of lighting
-              environments and pathways, generating high-fidelity atmospheres
-              that, combined with advanced AI, unlock systematic exploration of
-              previously inaccessible design spaces. At its core are our
-              ultra-efficient, in-house smart led datasets, which provide a rich
-              foundation for architectural identification and therapeutic
-              discovery.
-            </motion.p>
 
             <motion.div
               variants={itemVariants}
-              className="flex items-stretch group cursor-pointer w-fit"
+              className={`space-y-6 ${isHomePage ? "mb-12" : ""}`}
             >
-              <div className="bg-[#121212] group-hover:bg-primary text-white px-4 md:px-6 py-3 md:py-3 text-sm font-normal tracking-wide transition-colors duration-300 flex items-center">
-                Omoro Platform
-              </div>
-              <div className="bg-[#121212] group-hover:bg-primary text-white px-3 md:px-5 py-3 md:py-3 flex items-center justify-center border-l border-white/20 transition-colors duration-300">
-                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </div>
+              <p className="text-base text-gray-600 leading-relaxed max-w-2xl">
+                Omoro Lighting is a modern lighting destination created to bring
+                premium design and reliable performance into every home and
+                commercial space. We focus on delivering lighting that is not
+                only functional, but also enhances the beauty and mood of your
+                interiors.
+              </p>
+              <p className="text-base text-gray-600 leading-relaxed max-w-2xl">
+                From elegant decorative fixtures to advanced LED solutions, our
+                collection is carefully selected to match today’s architectural
+                trends and lifestyle needs. Whether it’s a cozy home setup, a
+                luxury villa, a showroom, or a corporate space, Omoro Lighting
+                provides the right balance of style, brightness, and energy
+                efficiency.
+              </p>
+
+              {!isHomePage && (
+                <>
+                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl">
+                    We offer a wide range of lighting solutions including wall
+                    lights, hanging lights, ceiling lights, profile lights,
+                    strip lights, garden lighting, mirror lights, and customized
+                    lighting concepts. Every product we provide is chosen with
+                    attention to quality, durability, and modern aesthetics.
+                  </p>
+                  <p className="text-base text-gray-600 leading-relaxed max-w-2xl">
+                    At Omoro Lighting, we believe lighting is an art that
+                    transforms spaces. With expert guidance, innovative designs,
+                    and customer-focused service, we are committed to creating
+                    brighter environments that leave a lasting impression.
+                  </p>
+                </>
+              )}
             </motion.div>
+
+            {isHomePage && (
+              <motion.div
+                variants={itemVariants}
+                className="flex items-stretch group cursor-pointer w-fit"
+              >
+                <a
+                  href="/about"
+                  className="flex items-stretch group cursor-pointer w-fit"
+                >
+                  <div className="bg-[#121212] group-hover:bg-[#04AFE2] text-white px-4 md:px-6 py-3 md:py-3 text-sm font-normal tracking-wide transition-colors duration-300 flex items-center">
+                    View More
+                  </div>
+                  <div className="bg-[#121212] group-hover:bg-[#04AFE2] text-white px-3 md:px-5 py-3 md:py-3 flex items-center justify-center border-l border-white/20 transition-colors duration-300">
+                    <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </a>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </div>

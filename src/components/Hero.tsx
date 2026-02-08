@@ -45,7 +45,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Content */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-end justify-between">
+      <div className="absolute bottom-10 left-0 right-0 z-20 container mx-auto px-6 md:px-12 hidden md:flex flex-col md:flex-row items-end justify-between">
         {/* Bottom Left Text */}
         <div className="max-w-xl text-left mb-0 md:mb-0">
           <p className="text-[14px] md:text-base font-normal leading-relaxed text-white/90 drop-shadow-md">

@@ -24,8 +24,8 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 md:px-12 h-full flex flex-col items-start md:items-center justify-center text-left md:text-center">
-        <h1 className="text-[35px] md:text-[65px] font-medium tracking-tight leading-[1.1] mb-8 md:mb-12 max-w-5xl">
+      <div className="relative z-10 container mx-auto px-6 md:px-12 h-full flex flex-col items-center justify-center text-center">
+        <h1 className="text-[32px] md:text-[65px] font-medium tracking-tight leading-[1.1] mb-8 md:mb-12 max-w-5xl">
           Smart & Innovative Lighting Solutions
         </h1>
 

@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center text-white overflow-hidden bg-black">
+    <section className="relative h-[80vh] md:h-screen min-h-[400px] md:min-h-[600px] flex items-center justify-center text-white overflow-hidden bg-black">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
